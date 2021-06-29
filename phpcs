@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+$phar = __DIR__ . '/phpcs.phar';
+
+require "phar://$phar/autoload.php";
+
+$runner   = new PHP_CodeSniffer\Runner();
+$exitCode = $runner->runPHPCS();
+exit($exitCode);
